@@ -1,0 +1,13 @@
+╔═════════════
+║cek[respon/cek bot]
+║ancur[kickall]
+║speed
+║cium @mention[kick target]
+║masuk[join group]
+║asup[join via qr]
+║kabur[asist leave group]
+║bye[all bot leave group]
+║banlist[check blacklist]
+║clearban[delete blacklist]
+║mybot[cek contact bot]
+╚═════════════
