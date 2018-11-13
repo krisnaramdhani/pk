@@ -77,6 +77,7 @@ for app in listApp:
     kr5 = LINE(authToken, appName=app)
     kr5.log("Auth Token : " + str(kr5.authToken))
     break
+print ("LOGIN SUCCESS PK CYBER ARMY BOT")
 oepoll = OEPoll(kr)
 lineProfile = kr.getProfile()
 lineSettings = kr.getSettings()
