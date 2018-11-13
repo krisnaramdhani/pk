@@ -21,78 +21,62 @@ listApp = [
 	#"IOSIPAD\t8.14.2\tKrisna\t11.2.5", 
 	#"WIN10\t5.5.5\tKrisna\t11.2.5"
 ]
-try:
-    for app in listApp:
-        try:
-            try:
-                with open("authToken.txt", "r") as token:
-                    authToken = token.read().replace("\n","")
-                    if not authToken:
-                        kr = LINE()
-                        with open("authToken.txt","w") as token:
-                            token.write(kr.authToken)
-                        continue
-                    kr = LINE(authToken, appName=app)
-                with open("authToken1.txt", "r") as token:
-                    authToken = token.read().replace("\n","")
-                    if not authToken:
-                        kr1 = LINE()
-                        with open("authToken1.txt","w") as token:
-                            token.write(kr1.authToken)
-                        continue
-                    kr1 = LINE(authToken, appName=app)
-                with open("authToken2.txt", "r") as token:
-                    authToken = token.read().replace("\n","")
-                    if not authToken:
-                        kr2 = LINE()
-                        with open("authToken2.txt","w") as token:
-                            token.write(kr2.authToken)
-                        continue
-                    kr2 = LINE(authToken, appName=app)
-                with open("authToken3.txt", "r") as token:
-                    authToken = token.read().replace("\n","")
-                    if not authToken:
-                        kr3 = LINE()
-                        with open("authToken3.txt","w") as token:
-                            token.write(kr3.authToken)
-                        continue
-                    kr3 = LINE(authToken, appName=app)
-                with open("authToken4.txt", "r") as token:
-                    authToken = token.read().replace("\n","")
-                    if not authToken:
-                        kr4 = LINE()
-                        with open("authToken4.txt","w") as token:
-                            token.write(kr4.authToken)
-                        continue
-                    kr4 = LINE(authToken, appName=app)
-                with open("authToken5.txt", "r") as token:
-                    authToken = token.read().replace("\n","")
-                    if not authToken:
-                        kr5 = LINE()
-                        with open("authToken5.txt","w") as token:
-                            token.write(kr5.authToken)
-                        continue
-                    kr5 = LINE(authToken, appName=app)
-                break
-            except Exception as error:
-                print(error)
-        except Exception as error:
-            print(error)
-except Exception as error:
-    print(error)
-kr.log("[%s] : Login success" % kr.profile.displayName)
-kr.log("Auth Token : " + str(kr.authToken))
-channelToken = kr.getChannelResult()
-kr1.log("[%s] : Login success" % kr1.profile.displayName)
-kr1.log("Auth Token : " + str(kr1.authToken))
-kr2.log("[%s] : Login success" % kr2.profile.displayName)
-kr2.log("Auth Token : " + str(kr2.authToken))
-kr3.log("[%s] : Login success" % kr3.profile.displayName)
-kr3.log("Auth Token : " + str(kr3.authToken))
-kr4.log("[%s] : Login success" % kr4.profile.displayName)
-kr4.log("Auth Token : " + str(kr4.authToken))
-kr5.log("[%s] : Login success" % kr5.profile.displayName)
-kr5.log("Auth Token : " + str(kr5.authToken))
+for app in listApp:
+    with open("authToken.txt", "r") as token:
+        authToken = token.read().replace("\n","")
+    if not authToken:
+        kr = LINE()
+        with open("authToken.txt","w") as token:
+            token.write(kr.authToken)
+        continue
+    kr = LINE(authToken, appName=app)
+    kr.log("Auth Token : " + str(kr.authToken))
+    with open("authToken1.txt", "r") as token:
+        authToken = token.read().replace("\n","")
+    if not authToken:
+        kr1 = LINE()
+        with open("authToken1.txt","w") as token:
+            token.write(kr1.authToken)
+        continue
+    kr1 = LINE(authToken, appName=app)
+    kr1.log("Auth Token : " + str(kr1.authToken))
+    with open("authToken2.txt", "r") as token:
+        authToken = token.read().replace("\n","")
+    if not authToken:
+        kr2 = LINE()
+        with open("authToken2.txt","w") as token:
+            token.write(kr2.authToken)
+        continue
+    kr2 = LINE(authToken, appName=app)
+    kr2.log("Auth Token : " + str(kr2.authToken))
+    with open("authToken3.txt", "r") as token:
+        authToken = token.read().replace("\n","")
+    if not authToken:
+        kr3 = LINE()
+        with open("authToken3.txt","w") as token:
+            token.write(kr3.authToken)
+        continue
+    kr3 = LINE(authToken, appName=app)
+    kr3.log("Auth Token : " + str(kr3.authToken))
+    with open("authToken4.txt", "r") as token:
+        authToken = token.read().replace("\n","")
+    if not authToken:
+        kr4 = LINE()
+        with open("authToken4.txt","w") as token:
+            token.write(kr4.authToken)
+        continue
+    kr4 = LINE(authToken, appName=app)
+    kr4.log("Auth Token : " + str(kr4.authToken))
+    with open("authToken5.txt", "r") as token:
+        authToken = token.read().replace("\n","")
+    if not authToken:
+        kr5 = LINE()
+        with open("authToken5.txt","w") as token:
+            token.write(kr5.authToken)
+        continue
+    kr5 = LINE(authToken, appName=app)
+    kr5.log("Auth Token : " + str(kr5.authToken))
+    break
 oepoll = OEPoll(kr)
 lineProfile = kr.getProfile()
 lineSettings = kr.getSettings()
